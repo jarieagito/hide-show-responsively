@@ -16,24 +16,60 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  margin: 0;
-}
-
 .dino-wrap {
   display: flex;
+  flex-wrap: wrap;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.dino {
+  width: 100%;
+}
+
+.dino:nth-child(even) {
+  display: none;
 }
 
 @media only screen and (min-width: 25em) {
 
+  .dino {
+    width: 50%;
   }
 
-  @media only screen and (min-width: 38em) {
-
-
+  .dino:nth-child(even) {
+    display: inline-block;
   }
 
-  @media only screen and (min-width: 60em) {
+}
 
+@media only screen and (min-width: 38em) {
+
+  .dino-wrap {
+    flex-wrap: nowrap;
+  }
+
+  .dino {
+    width: 100%;
+  }
+
+  .dino:first-child {
+    display: none;
+  }
+
+}
+
+@media only screen and (min-width: 60em) {
+
+  .dino {
+    width: 100%;
+  }
+
+  .dino:first-child {
+    display: inline-block;
+  }
 
 }
